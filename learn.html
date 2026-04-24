@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn | Rux Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <script>
+        const savedTheme = localStorage.getItem('rux-theme') || 'catppuccin';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="logo-icon">❯_</span> Rux
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="docs.html">Docs</a></li>
+            <li><a href="learn.html" class="active">Learn</a></li>
+        </ul>
+        <div class="nav-actions">
+            <div class="theme-select-wrapper">
+                <select id="theme-select" aria-label="Select Theme">
+                    <option value="catppuccin">Catppuccin</option>
+                    <option value="tokyonight">TokyoNight</option>
+                    <option value="kanagawa">Kanagawa</option>
+                    <option value="onedark">OneDark</option>
+                    <option value="gruvbox">Gruvbox</option>
+                    <option value="nord">Nord</option>
+                    <option value="monokai">Monokai Pro</option>
+                    <option value="rosepine">Rosé Pine</option>
+                    <option value="everforest">Everforest</option>
+                    <option value="ayu">Ayu</option>
+                    <option value="dracula">Dracula</option>
+                    <option value="solarized">Solarized</option>
+                </select>
+            </div>
+            <a href="https://github.com/your-username/rux" class="btn btn-outline" target="_blank">GitHub</a>
+        </div>
+        <button class="mobile-menu-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+    </nav>
+
+    <div class="coming-soon-container">
+        <div class="hero-terminal minimal-terminal">
+            <div class="terminal-header">
+                <div class="dots">
+                    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                </div>
+                <div class="terminal-title">rux learn.rs</div>
+            </div>
+            <div class="terminal-body center-text">
+                <h1 class="soon-title" style="color: var(--function);">Tutorials Coming Soon</h1>
+                <p class="soon-desc">Step-by-step guides to master Rux will appear here.</p>
+                <div class="mock-command">
+                    Press <span class="hl-box">:help</span> inside Rux for quick commands!
+                </div>
+            </div>
+            <div class="terminal-status">
+                <div class="status-left">
+                    <span class="mode-badge"> NOR </span>
+                    <span class="file-name"> learn.rs</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rux Editor | Post-modern terminal editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <!-- Prevents theme flashing on load -->
+    <script>
+        const savedTheme = localStorage.getItem('rux-theme') || 'catppuccin';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="logo-icon">❯_</span> Rux
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="docs.html">Docs</a></li>
+            <li><a href="learn.html">Learn</a></li>
+        </ul>
+        <div class="nav-actions">
+            <div class="theme-select-wrapper">
+                <svg class="theme-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <select id="theme-select" aria-label="Select Theme">
+                    <option value="catppuccin">Catppuccin</option>
+                    <option value="tokyonight">TokyoNight</option>
+                    <option value="kanagawa">Kanagawa</option>
+                    <option value="onedark">OneDark</option>
+                    <option value="gruvbox">Gruvbox</option>
+                    <option value="nord">Nord</option>
+                    <option value="monokai">Monokai Pro</option>
+                    <option value="rosepine">Rosé Pine</option>
+                    <option value="everforest">Everforest</option>
+                    <option value="ayu">Ayu</option>
+                    <option value="dracula">Dracula</option>
+                    <option value="solarized">Solarized</option>
+                </select>
+            </div>
+            <a href="https://github.com/your-username/rux" class="btn btn-outline" target="_blank">GitHub</a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="badge">
+                <span class="pulse-dot"></span> v0.5.0 is out!
+            </div>
+            <h1>A post-modern<br><span class="highlight">terminal editor.</span></h1>
+            <p>Written in Rust. Blazingly fast. Comes with built-in LSP, tree-sitter, and beautiful themes right out of the box. No crazy plugins needed.</p>
+            <div class="hero-buttons">
+                <a href="#install" class="btn btn-primary">Install Now</a>
+                <a href="docs.html" class="btn btn-secondary">Read Docs</a>
+            </div>
+        </div>
+
+        <div class="hero-terminal">
+            <div class="terminal-header">
+                <div class="dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="terminal-title">rux main.rs</div>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-tabs">
+                    <span class="tab active"> main.rs <span class="dirty">●</span></span>
+                    <span class="tab"> config.rs </span>
+                </div>
+                <div class="code-area">
+                    <div id="typewriter"></div>
+                </div>
+            </div>
+            <!-- Accurate Rux Status Bar Replica -->
+            <div class="terminal-status">
+                <div class="status-left">
+                    <span class="mode-badge"> NOR </span>
+                    <span class="file-name"> main.rs <span class="dirty">[+]</span></span>
+                </div>
+                <div class="status-right">
+                    <span> Ln:12 Col:4 </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="features">
+        <div class="feature-card">
+            <div class="icon" style="color: var(--function);">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3>Blazingly Fast</h3>
+            <p>Written entirely in Rust with an 8MB atomic frame buffer. It opens instantly and never tears, even on massive codebases.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon" style="color: var(--keyword);">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3>Smart Autocomplete</h3>
+            <p>Built-in Language Server Protocol (LSP) and Tree-sitter gives you VS Code level autocomplete directly in your terminal.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon" style="color: var(--string);">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/></svg>
+            </div>
+            <h3>12 Built-in Themes</h3>
+            <p>Switch between Catppuccin, TokyoNight, Kanagawa, Gruvbox, and more instantly. No extra configuration required.</p>
+        </div>
+    </section>
+
+    <section id="install" class="install-section">
+        <h2>Install Rux</h2>
+        <p>You need Rust and Cargo installed on your system.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block">
+                <pre><code>git clone https://github.com/your-username/rux.git
+cd rux
+cargo install --path .</code></pre>
+                <button class="copy-btn" id="copyBtn" aria-label="Copy to clipboard">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy
+                </button>
+            </div>
+        </div>
+        <p class="coming-soon-text">Script installation (curl | bash) is coming soon!</p>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>Rux Editor is released under the <a href="#" style="color: var(--function);">Apache 2.0 License</a>.</p>
+            <p class="made-with">Made with 🦀 and ❤️</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
