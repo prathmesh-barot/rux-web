@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn | Rux Editor</title>
+    <title>News | Rux Editor</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
     <script>
@@ -19,8 +19,8 @@
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="docs.html">Docs</a></li>
-            <li><a href="learn.html" class="active">Learn</a></li>
-            <li><a href="news.html">News</a></li>
+            <li><a href="learn.html">Learn</a></li>
+            <li><a href="news.html" class="active">News</a></li>
             <li><a href="community.html">Community</a></li>
         </ul>
         <div class="nav-actions">
@@ -49,30 +49,34 @@
     </nav>
 
     <div class="page-header">
-        <h1>Learn Rux</h1>
-        <p>Tutorials, guides, and tips to level up your terminal workflow.</p>
+        <h1>News & Releases</h1>
+        <p>Stay up to date with the latest Rux updates.</p>
     </div>
 
-    <div class="learn-grid">
-        <div class="learn-card">
-            <div class="learn-tag basic">Basics</div>
-            <h3>Migrating from Vim</h3>
-            <p>Learn how your favorite Vim motions translate to Rux, and what new commands you can use.</p>
-            <span class="coming-soon">Coming Soon</span>
-        </div>
-        <div class="learn-card">
-            <div class="learn-tag advanced">Advanced</div>
-            <h3>Mastering LSP & Code Actions</h3>
-            <p>How to configure language servers for Rust, Go, Python, and JavaScript for the ultimate setup.</p>
-            <span class="coming-soon">Coming Soon</span>
-        </div>
-        <div class="learn-card">
-            <div class="learn-tag internal">Internal</div>
-            <h3>Creating Custom Themes</h3>
-            <p>A deep dive into `theme.rs` and how to compile Rux with your own personalized color palette.</p>
-            <span class="coming-soon">Coming Soon</span>
-        </div>
-    </div>
+    <main class="news-container">
+        <article class="news-post">
+            <div class="news-meta">April 24, 2026 • Release</div>
+            <h2>Rux v0.5.0: The Theme Engine Update</h2>
+            <p>We are incredibly excited to announce the release of Rux v0.5.0! This release focuses heavily on UI, UX, and bringing beautiful default aesthetics without relying on plugins.</p>
+            <h3>What's new?</h3>
+            <ul>
+                <li><strong>12 Built-in Themes:</strong> We've baked in the most popular terminal themes directly into the binary. From Catppuccin and TokyoNight, to Gruvbox and Kanagawa. Switch instantly using <code>:theme &lt;name&gt;</code>.</li>
+                <li><strong>Atomic Redraw:</strong> The terminal UI buffer has been rewritten to guarantee 0% tearing when scrolling fast through large files.</li>
+                <li><strong>Split Panes:</strong> Use <code>Ctrl+W</code> to manage horizontal and vertical splits effortlessly.</li>
+            </ul>
+        </article>
+
+        <article class="news-post">
+            <div class="news-meta">March 10, 2026 • Release</div>
+            <h2>Rux v0.4.0: LSP Integration</h2>
+            <p>Rux is no longer just a text editor—it's an IDE inside your terminal. With v0.4.0, we have integrated a full LSP client natively.</p>
+            <ul>
+                <li>Zero-config support for `rust-analyzer`, `gopls`, and `pyright`.</li>
+                <li>Inline diagnostic rendering (errors/warnings).</li>
+                <li>Fast, responsive dropdowns for auto-completion.</li>
+            </ul>
+        </article>
+    </main>
 
     <footer>
         <div class="footer-content">

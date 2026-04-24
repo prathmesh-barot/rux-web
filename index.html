@@ -6,7 +6,6 @@
     <title>Rux Editor | Post-modern terminal editor</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
-    <!-- Prevents theme flashing on load -->
     <script>
         const savedTheme = localStorage.getItem('rux-theme') || 'catppuccin';
         document.documentElement.setAttribute('data-theme', savedTheme);
@@ -21,6 +20,8 @@
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="docs.html">Docs</a></li>
             <li><a href="learn.html">Learn</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="community.html">Community</a></li>
         </ul>
         <div class="nav-actions">
             <div class="theme-select-wrapper">
@@ -49,9 +50,9 @@
 
     <header class="hero">
         <div class="hero-content">
-            <div class="badge">
-                <span class="pulse-dot"></span> v0.5.0 is out!
-            </div>
+            <a href="news.html" class="badge">
+                <span class="pulse-dot"></span> v0.6.0 is out! Read the changelog →
+            </a>
             <h1>A post-modern<br><span class="highlight">terminal editor.</span></h1>
             <p>Written in Rust. Blazingly fast. Comes with built-in LSP, tree-sitter, and beautiful themes right out of the box. No crazy plugins needed.</p>
             <div class="hero-buttons">
@@ -78,7 +79,6 @@
                     <div id="typewriter"></div>
                 </div>
             </div>
-            <!-- Accurate Rux Status Bar Replica -->
             <div class="terminal-status">
                 <div class="status-left">
                     <span class="mode-badge"> NOR </span>
@@ -133,7 +133,7 @@ cargo install --path .</code></pre>
 
     <footer>
         <div class="footer-content">
-            <p>Rux Editor is released under the <a href="#" style="color: var(--function);">Apache 2.0 License</a>.</p>
+            <p>Rux Editor is released under the <a href="https://github.com/your-username/rux/blob/main/LICENSE" style="color: var(--function);" target="_blank">Apache 2.0 License</a>.</p>
             <p class="made-with">Made with 🦀 and ❤️</p>
         </div>
     </footer>

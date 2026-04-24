@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Docs | Rux Editor</title>
+    <title>Documentation | Rux Editor</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
     <script>
@@ -20,10 +20,12 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="docs.html" class="active">Docs</a></li>
             <li><a href="learn.html">Learn</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="community.html">Community</a></li>
         </ul>
         <div class="nav-actions">
-            <!-- Theme selector duplicated for seamless UX -->
             <div class="theme-select-wrapper">
+                <svg class="theme-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                 <select id="theme-select" aria-label="Select Theme">
                     <option value="catppuccin">Catppuccin</option>
                     <option value="tokyonight">TokyoNight</option>
@@ -41,36 +43,66 @@
             </div>
             <a href="https://github.com/your-username/rux" class="btn btn-outline" target="_blank">GitHub</a>
         </div>
-        <button class="mobile-menu-btn">
+        <button class="mobile-menu-btn" aria-label="Menu">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
     </nav>
 
-    <div class="coming-soon-container">
-        <div class="hero-terminal minimal-terminal">
-            <div class="terminal-header">
-                <div class="dots">
-                    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                </div>
-                <div class="terminal-title">rux docs.md</div>
+    <div class="docs-layout">
+        <aside class="docs-sidebar">
+            <div class="sidebar-section">
+                <h4>Getting Started</h4>
+                <ul>
+                    <li><a href="#introduction" class="active">Introduction</a></li>
+                    <li><a href="#installation">Installation</a></li>
+                    <li><a href="#quick-start">Quick Start</a></li>
+                </ul>
             </div>
-            <div class="terminal-body center-text">
-                <h1 class="soon-title">Documentation Coming Soon</h1>
-                <p class="soon-desc">We are currently writing the official documentation.</p>
-                <div class="code-block mock-code">
-                    <span class="com">// Check the GitHub README in the meantime.</span>
-                    <br><span class="kw">fn</span> <span class="func">read_readme</span>() {
-                    <br>    <span class="macro">println!</span>(<span class="str">"https://github.com/your-username/rux"</span>);
-                    <br>}
-                </div>
+            <div class="sidebar-section">
+                <h4>Configuration</h4>
+                <ul>
+                    <li><a href="#config-toml">config.toml</a></li>
+                    <li><a href="#themes">Themes</a></li>
+                    <li><a href="#keybindings">Keybindings</a></li>
+                </ul>
             </div>
-            <div class="terminal-status">
-                <div class="status-left">
-                    <span class="mode-badge cmd-mode"> CMD </span>
-                    <span class="file-name"> :wq</span>
-                </div>
+            <div class="sidebar-section">
+                <h4>Features</h4>
+                <ul>
+                    <li><a href="#lsp">LSP Setup</a></li>
+                    <li><a href="#tree-sitter">Tree-sitter</a></li>
+                    <li><a href="#panes">Window Panes</a></li>
+                </ul>
             </div>
-        </div>
+        </aside>
+
+        <main class="docs-content">
+            <div class="breadcrumb">Docs / Getting Started / Introduction</div>
+            <h1 id="introduction">Rux Documentation</h1>
+            <p>Welcome to the official documentation for Rux Editor. Here you will find everything from basic installation to advanced LSP configuration.</p>
+            
+            <h2>Architecture Overview</h2>
+            <p>Rux is designed around a single, highly-optimized atomic frame buffer. It skips all the heavy abstraction layers found in modern electron apps to give you unparalleled speed in your terminal.</p>
+            <div class="code-block" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+                <pre><code><span class="com">// Fast, simple, reliable.</span>
+<span class="kw">pub struct</span> <span class="type">RuxConfig</span> {
+    <span class="kw">pub</span> editor: <span class="type">EditorConfig</span>,
+    <span class="kw">pub</span> lsp: <span class="type">LspConfig</span>,
+}</code></pre>
+            </div>
+
+            <h2 id="installation">Installation</h2>
+            <p>Currently, Rux is distributed as source. You will need the latest stable release of Rust to compile it on your machine.</p>
+            <div class="code-block" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+                <pre><code>cargo install --git https://github.com/your-username/rux.git</code></pre>
+            </div>
+
+            <h2 id="quick-start">Quick Start</h2>
+            <p>Once installed, you can simply run `rux` in your terminal to open an empty buffer, or pass a file or directory directly.</p>
+            <div class="code-block" style="width: 100%; margin-top: 1rem; margin-bottom: 2rem;">
+                <pre><code>rux ./src/main.rs</code></pre>
+            </div>
+        </main>
     </div>
 
     <script src="script.js"></script>
